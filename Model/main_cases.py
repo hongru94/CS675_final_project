@@ -3,7 +3,7 @@
 """
 Created on Thu Dec  3 15:02:22 2020
 
-@author: hongru
+@author: Hongru
 """
 
 
@@ -57,7 +57,7 @@ df['cases'] = (df['cases']/df['total_pop'])*10000
 '''
 Preprocess data
 Scale data between [0,1]
-
+Sample data from available dataset based on training length and output length
 '''
 scaler = MinMaxScaler(feature_range = (0, 1))
 train_features_normalized = scaler.fit_transform(df.iloc[:, 1:])
@@ -181,4 +181,4 @@ for i in trange(num_epochs):
     
 #%%
 
-torch.save(model.state_dict(), '/Users/hongru/Projects/Covid_projection/models/RNN-LSTM-7-day-projection_week44.pt')
+torch.save(model.state_dict(), '/models/RNN-LSTM-7-day-projection_week44.pt')
