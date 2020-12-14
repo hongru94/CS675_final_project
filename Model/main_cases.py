@@ -55,7 +55,7 @@ df['cases'] = (df['cases']/df['total_pop'])*10000
 #%%
 
 '''
-Preprocess data
+Preprocess data for predict future cases
 Scale data between [0,1]
 Sample data from available dataset based on training length and output length
 '''
@@ -98,6 +98,48 @@ for i in df.index.get_level_values('FIPS').unique():
         for x in train_state:
             train_data.append(x)
         state_ordered.append(i)
+        
+#%%
+'''
+Preprocess data for predict future features
+So the label will match to number of features * number of predict days
+'''
+# =============================================================================
+# def create_inout_sequences(input_data, seq_length, output_size):
+#     inout_seq = []
+#     L = len(input_data)
+#     for i in range(L-seq_length-output_size+1):
+#         train_seq = input_data[i:i+seq_length]
+#         train_label = input_data[i:i+seq_length+output_size][seq_length:seq_length+output_size, 1:-2]
+#         inout_seq.append((train_seq ,train_label))
+#     return inout_seq
+# # Get train and test data for all states
+# # test_data_size = 1
+# train_data = []
+# state_ordered = []
+# 
+# for i in df.index.get_level_values('FIPS').unique():
+#     df_state = df.iloc[df.index.get_level_values('FIPS') == i]
+#     
+#     if len(df_state) <= 90:
+#     
+#         train_state = create_inout_sequences(df_state.to_numpy(), sequence_length, output_date_length)
+#     
+#         for x in train_state:
+#             train_data.append(x)
+#             
+#     
+#     else:
+#         df_state = df.iloc[df.index.get_level_values('FIPS') == i][-90:]
+#     
+#         train_state = create_inout_sequences(df_state.to_numpy(), sequence_length, output_date_length)
+#     
+#         for x in train_state:
+#             train_data.append(x)
+#             
+#     state_ordered.append(i)
+# =============================================================================
+        
 #%%%%%%%%%
 '''
 RNN LSTM 
