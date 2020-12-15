@@ -17,18 +17,23 @@ A local outbreak of “pneumonia of unknown cause” detected in Wuhan, Hubei Pr
 - The [Prediction directory](https://github.com/hongru94/CS675_final_project/tree/main/Predictions) contains two trained models and also a notebook, which takes those two models as input and expand prediction to future 4 weeks. 
 - The [Data directory](https://github.com/hongru94/CS675_final_project/tree/main/Data) contains some of the raw data we used for training this model. However, due to the unshareable datasets we adopted from the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU), if you want to test out the model yourself, please contact [Hongru Du](mailto:hd9@jhu.edu) to get access to the entire datasets. Some of the results and evaluation of the model are shown in the figures below.
 
+# Method
+
+![Image text](https://github.com/enshengdong/CS675_final_project/blob/main/method.PNG)   
+Figure 1: LSTM RNN.<br>
+
 # Split of train and test data sets:
 
 ![Image text](https://github.com/enshengdong/CS675_final_project/blob/main/split.png)   
-Figure 1: Split of train and test data sets.<br>
+Figure 2: Split of train and test data sets.<br>
 
 ## Sample outputs:
 
 ![Image text](https://github.com/arthurzhang434/CS675_final_project/blob/main/weekly.png)   
-Figure 2: The predictions made to several states's weekly new cases based on our model.<br>
+Figure 3: The predictions made to several states's weekly new cases based on our model.<br>
 <br>
 ![Image text](https://github.com/arthurzhang434/CS675_final_project/blob/main/model_comparison_week46.png)   
-Figure 3: The comparison of the mean absolute error on weekly new cases prediction from the groundtruth between our model and CDC ensemble model. <br>
+Figure 4: The comparison of the mean absolute error on weekly new cases prediction from the groundtruth between our model and CDC ensemble model. <br>
 
 ## References:
 
